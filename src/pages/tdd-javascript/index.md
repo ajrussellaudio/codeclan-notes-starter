@@ -16,7 +16,7 @@ date: "2015-05-28T22:40:32.169Z"
 
 We've learned the fundamentals of JavaScript and we're able to use them to write some fairly robust code, but how can we be sure that our code works?
 
-We could use `console.log()` to verify that our functions have the expected output, but then our code would be littered with redundant statements that aren't relevent to it's functionality.
+We could use `console.log()` to verify that our functions have the expected output, but then our code would be littered with redundant statements that aren't relevant to its functionality.
 
 We could remove those `console.log()`s once we're satisfied that our code works, but then how would we test that our code still works if we were to refactor it?
 
