@@ -7,13 +7,15 @@ module: Java
 
 * Understand how inheritance works in Java
 
+## Intro
+
 When we were learning Ruby, we saw how useful it was to gather classes together when they share properties or functionality. We used _inheritance_ to describe the relationship between superclasses and subclasses.
 
 > Scan the room for blank expressions. Have a quick recap of inheritance in Ruby if necessary.
 
-```
+```ruby
 class Vehicle
-  ...
+  # ...
   def start_engine
     "Vrmmmm!"
   end
@@ -26,7 +28,7 @@ end
 
 The same concept exists in Java, and although the syntax is a little different, the idea is much the same. We can use the 'extends' keyword to use inheritance.
 
-```
+```java
 class Vehicle {
   int numWheels = 4;
 }
@@ -40,7 +42,7 @@ public class Car extends Vehicle {
 
 We can see from the example above that the Car class has inherited the numWheels property from the parent vehicle class. If we want, we can _override_ the property's value with something new.
 
-```
+```java
 class Vehicle {
   int numWheels = 4;
 }
@@ -56,7 +58,7 @@ Note that we have to override the instance variable in the constructor.
 
 We can override methods to do something specific for that class:
 
-```
+```java
 class Vehicle {
   public String startEngine(){
     return "Vrrrm!";
@@ -74,7 +76,7 @@ public class Car extends Vehicle {
 
 Just as in Ruby, we can use the `super` keyword to trigger functionality from the parent class. We can refactor the code above to be more DRY.
 
-```
+```java
 class Vehicle {
   public String startEngine(){
     return "Vrrrm!";
@@ -90,7 +92,7 @@ public class Car extends Vehicle {
 
 When the `super()` method is called on its own, it will call the parent class' constructor.
 
-```
+```java
 class Vehicle {
   int numWheels;
 
@@ -114,7 +116,7 @@ In this example, when we instantiate a new car, we will pass an integer paramete
 
 So far, we have been using single inheritance, where our Car class inherits from a single parent, Vehicle. We can also create an _inheritance chain_, where a class inherits from more than one layer of parent classes. For example:
 
-```
+```java
 class Vehicle {
 
 }
@@ -130,7 +132,7 @@ class ElectricCar extends Car {
 
 However, we can never inherit directly from more than one parent class. This would be illegal:
 
-```
+```java
 class ElectricCar extends Car, Vehicle {
 
 }
