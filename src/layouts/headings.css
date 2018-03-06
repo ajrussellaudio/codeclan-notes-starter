@@ -1,0 +1,22 @@
+h2::before {
+  content: '> ';
+}
+
+h3::before {
+  content: '>> ';
+}
+
+h4::before,
+h5::before,
+h6::before {
+  content: '>>> ';
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(35, 114, 181, 0.5);
+}

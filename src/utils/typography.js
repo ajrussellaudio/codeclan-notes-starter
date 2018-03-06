@@ -11,7 +11,7 @@ const colors = {
 
 const typography = new Typography({
   title: 'Russell',
-  baseFontSize: '21px',
+  baseFontSize: '18px',
   baseLineHeight: 1.3,
   scaleRatio: 1.5,
   googleFonts: [
@@ -45,7 +45,6 @@ const typography = new Typography({
       display: 'none',
     },
     code: {
-      ...adjustFontSizeTo('16px'),
       fontFamily: '"Source Code Pro", mono',
     },
     'h1,h2,h3,h4,h5,h6': {
