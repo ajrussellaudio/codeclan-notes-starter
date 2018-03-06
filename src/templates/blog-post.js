@@ -14,7 +14,9 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <div>
-        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`}>
+          <link rel="icon" type="image/png" href="/favicon.png" />
+        </Helmet>
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
