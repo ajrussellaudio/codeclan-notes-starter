@@ -42,13 +42,7 @@ const typography = new Typography({
       color: colors.lightblue,
     },
     blockquote: {
-      ...scale(1 / 5),
-      color: gray(30),
-      fontStyle: 'italic',
-      paddingLeft: rhythm(3 / 4),
-      marginLeft: 0,
-      marginRight: 0,
-      borderLeft: `${rhythm(1 / 4)} solid ${options.bodyColor}`,
+      display: 'none',
     },
     code: {
       ...adjustFontSizeTo('16px'),
