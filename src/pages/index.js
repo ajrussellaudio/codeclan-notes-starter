@@ -1,16 +1,14 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
-import { rhythm } from '../utils/typography'
+import LessonList from '../components/LessonList'
 
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
-    const weekNumber = get(this, 'props.data.site.siteMetadata.weekNumber')
+
     const description = ({ frontmatter, excerpt }) => {
       if (frontmatter.objectives) {
         return (
@@ -31,25 +29,10 @@ class BlogIndex extends React.Component {
           <link rel="icon" type="image/png" href="/favicon.png" />
         </Helmet>
         <Bio />
-        {posts
-          .filter(({ node }) => get(node, 'frontmatter.week') <= weekNumber)
-          .map(({ node }) => {
-            const title = get(node, 'frontmatter.title') || node.fields.slug
-            return (
-              <div key={node.fields.slug}>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                {description(node)}
-              </div>
-            )
-          })}
+        <LessonList
+          lessons={get(this, 'props.data.allMarkdownRemark.edges', [])}
+          weekNumber={get(this, 'props.data.site.siteMetadata.weekNumber', 1)}
+        />
       </div>
     )
   }
@@ -74,7 +57,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            duration
+            description
             objectives
             week
           }

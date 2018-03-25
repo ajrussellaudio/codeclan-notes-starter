@@ -1,5 +1,3 @@
-const config = require('./config.js')
-
 module.exports = {
   siteMetadata: {
     weekNumber: 1, // INCREASE THIS EVERY WEEK
