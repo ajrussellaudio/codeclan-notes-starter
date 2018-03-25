@@ -1,4 +1,5 @@
 import React from 'react'
+import './ContentsBox.css'
 
 class ContentsBox extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class ContentsBox extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="contents-box">
         <h4 onClick={this.hiddenToggle}>
           <a>Contents [{this.state.hidden ? 'show' : 'hide'}]</a>
         </h4>
