@@ -29,7 +29,7 @@ We'll begin by taking a look at Node's Assert module on it's own so that we can 
 
 The first thing that we'll need to do is create a .js file to work in.
 
-```sh
+```bash
 touch play.js
 ```
 
@@ -53,7 +53,7 @@ assert.equal(true, true)
 
 We can then run our tests in the same way that we would run any other .js file.
 
-```sh
+```bash
 node play.js
 ```
 
@@ -63,7 +63,7 @@ Notice that we don't get any feedback at all. This isn't ideal. Node will only t
 assert.equal(true, false)
 ```
 
-```sh
+```bash
 node play.js
 
 # -> AssertionError [ERR_ASSERTION]: true == false
@@ -101,7 +101,7 @@ The following test will fail.
 assert.strictEqual(1, '1')
 ```
 
-```sh
+```bash
 node play.js
 
 # -> AssertionError [ERR_ASSERTION]: 1 === '1'
@@ -149,7 +149,7 @@ We can use `deepStrictEqual()`, which uses JavaScript's strict equality operator
 assert.deepStrictEqual([1, 2, 3], ['1', '2', '3'])
 ```
 
-```sh
+```bash
 npm test
 
 # -> AssertionError [ERR_ASSERTION]: [ 1, 2, 3 ] deepStrictEqual [ '1', '2', '3' ]
@@ -175,7 +175,7 @@ BDD is an extension of TDD which attempts to focus on the user, and the product.
 
 The first thing that we'll need to do is create some files to work in. We're going to model a taxi, so we'll need a file for our `Taxi` model and corresponding spec file. We typically create a specs folder to keep our tests organised separately from our models and name our test files the same as our models with a \_spec suffix. For example, the test file for our taxi model will be called taxi_spec.js.
 
-```sh
+```bash
 touch taxi.js
 mkdir specs
 touch specs/taxi_spec.js
@@ -187,7 +187,7 @@ We'll use Mocha during development but our tests aren't necessary to actually ru
 
 If someone was to then clone our project with the intention of running it without modifying the code, they could use `npm install --production` to avoid installing our dev dependencies.
 
-```sh
+```bash
 npm init
 npm install --save-dev mocha
 ```
@@ -196,7 +196,7 @@ We have a test file and we've installed Mocha, so now we have everything that we
 
 We want to use Mocha to run all of the files in our specs folder.
 
-```sh
+```bash
 mocha specs
 
 # -> zsh: command not found: mocha
@@ -220,7 +220,7 @@ npm expects us to have a `"test"` script, so it provides one by default. We can 
 
 Now that we've added our npm script we can run it using `npm test` while we're at the same level as our package.json.
 
-```sh
+```bash
 npm test
 
 # -> 0 passing
@@ -341,7 +341,7 @@ We've written our test but it should fail because we haven't written the code to
 
 If you've never seen a test fail then you can't be sure that it's a good test, or that it tests anything at all.
 
-```sh
+```bash
 npm test
 
 # -> 1 failing
@@ -362,7 +362,7 @@ module.exports = Taxi
 
 Now we should be able to run our test again and it should pass.
 
-```sh
+```bash
 npm test
 
 # -> 1 passing
@@ -387,7 +387,7 @@ describe('Taxi', function() {
 
 Again, we should run our test so that we can see it fail. If it passed already then we would know that we had made a mistake.
 
-```sh
+```bash
 npm test
 
 # -> 1 passing
@@ -410,7 +410,7 @@ const Taxi = function(manufacturer, model) {
 
 Now we should be able to run our tests again and see them both pass.
 
-```sh
+```bash
 npm test
 
 # -> 2 passing
@@ -533,7 +533,7 @@ describe('passengers', function() {
 
 Let's run our test and see it fail.
 
-```sh
+```bash
 npm test
 
 # -> 3 passing
@@ -556,7 +556,7 @@ const Taxi = function(manufacturer, model, driver) {
 
 Now our test should pass.
 
-```sh
+```bash
 npm test
 
 # -> 4 passing
