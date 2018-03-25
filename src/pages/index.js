@@ -32,7 +32,7 @@ class BlogIndex extends React.Component {
         </Helmet>
         <Bio />
         {posts
-          .filter(({ node }) => get(node, 'frontmatter.week') < weekNumber)
+          .filter(({ node }) => get(node, 'frontmatter.week') <= weekNumber)
           .map(({ node }) => {
             const title = get(node, 'frontmatter.title') || node.fields.slug
             return (

@@ -1,10 +1,12 @@
+const config = require('./config.js')
+
 module.exports = {
   siteMetadata: {
+    weekNumber: 1, // INCREASE THIS EVERY WEEK
     title: 'CodeClan',
     author: 'CodeClan Instructor Team',
     description: 'Notes for learning at CodeClan',
     siteUrl: 'https://codeclan.com',
-    weekNumber: 4,
   },
   pathPrefix: '/notes',
   plugins: [
