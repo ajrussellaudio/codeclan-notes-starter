@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 
 import Bio from '../components/Bio'
+import ContentsBox from '../components/ContentsBox'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
@@ -18,7 +19,7 @@ class BlogPostTemplate extends React.Component {
           <link rel="icon" type="image/png" href="/favicon.png" />
         </Helmet>
         <h1>{post.frontmatter.title}</h1>
-
+        <ContentsBox html={post.tableOfContents} />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -74,6 +75,7 @@ export const pageQuery = graphql`
         title
         duration
       }
+      tableOfContents
     }
   }
 `

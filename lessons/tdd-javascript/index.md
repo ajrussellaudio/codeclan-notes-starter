@@ -6,6 +6,8 @@ duration: 120 minutes
 objectives: ["Be able to write basic tests using Node's Assert module", "Be able to write unit tests using Assert in combination with Mocha", "Be able to run test files with Mocha using an npm script"]
 ---
 
+## Introduction
+
 We've learned the fundamentals of JavaScript and we're able to use them to write some fairly robust code, but how can we be sure that our code works?
 
 We could use `console.log()` to verify that our functions have the expected output, but then our code would be littered with redundant statements that aren't relevant to its functionality.

@@ -4,6 +4,8 @@ module: Intro to Programming
 week: 1
 ---
 
+## Introduction
+
 Well done, we have become object orientated programmers, by creating a class and instantiating objects using it.
 
 When object orientated programming becomes really powerful is when an object uses an other object to help it in a task. Enough theory, let's look at an example.
