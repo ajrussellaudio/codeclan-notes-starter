@@ -1,6 +1,7 @@
 ---
 title: Inheritance
 module: Java
+order: 2
 ---
 
 ## Learning objectives

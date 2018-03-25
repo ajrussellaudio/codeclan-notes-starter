@@ -1,6 +1,7 @@
 ---
 title: Multiple Classes
 module: Intro to Programming
+order: 1
 ---
 
 Well done, we have become object orientated programmers, by creating a class and instantiating objects using it.
