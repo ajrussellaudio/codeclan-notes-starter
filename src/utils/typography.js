@@ -10,7 +10,7 @@ const colors = {
 }
 
 const typography = new Typography({
-  title: 'Russell',
+  title: 'CodeClan-FreeAlternative',
   baseFontSize: '18px',
   baseLineHeight: 1.3,
   scaleRatio: 1.5,
