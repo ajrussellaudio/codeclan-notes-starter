@@ -2,17 +2,9 @@
 title: Test Driven Development Using Assert and Mocha
 module: JavaScript
 week: 3
+duration: 120 minutes
+objectives: ["Be able to write basic tests using Node's Assert module", "Be able to write unit tests using Assert in combination with Mocha", "Be able to run test files with Mocha using an npm script"]
 ---
-
-**Duration: 120 minutes**
-
-## Learning Objectives
-
-* Be able to write basic tests using Node's Assert module
-* Be able to write unit tests using Assert in combination with Mocha
-* Be able to run test files with Mocha using an npm script
-
-## Intro
 
 We've learned the fundamentals of JavaScript and we're able to use them to write some fairly robust code, but how can we be sure that our code works?
 

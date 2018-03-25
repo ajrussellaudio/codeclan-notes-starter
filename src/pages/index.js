@@ -11,6 +11,19 @@ class BlogIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
     const weekNumber = get(this, 'props.data.site.siteMetadata.weekNumber')
+    const description = ({ frontmatter, excerpt }) => {
+      if (frontmatter.objectives) {
+        return (
+          <ul>
+            {frontmatter.objectives.map((objective, i) => (
+              <li key={i}>{objective}</li>
+            ))}
+          </ul>
+        )
+      } else {
+        return <p dangerouslySetInnerHTML={{ __html: excerpt }} />
+      }
+    }
 
     return (
       <div>
@@ -33,7 +46,7 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                {description(node)}
               </div>
             )
           })}
@@ -61,6 +74,8 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            duration
+            objectives
             week
           }
         }

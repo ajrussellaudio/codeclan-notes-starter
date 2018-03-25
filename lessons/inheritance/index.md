@@ -2,11 +2,8 @@
 title: Inheritance
 module: Java
 week: 2
+objectives: ["Understand how inheritance works in Java"]
 ---
-
-## Learning objectives
-
-* Understand how inheritance works in Java
 
 ## Intro
 

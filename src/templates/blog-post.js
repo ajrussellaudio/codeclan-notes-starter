@@ -18,6 +18,7 @@ class BlogPostTemplate extends React.Component {
           <link rel="icon" type="image/png" href="/favicon.png" />
         </Helmet>
         <h1>{post.frontmatter.title}</h1>
+
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -71,6 +72,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        duration
       }
     }
   }
