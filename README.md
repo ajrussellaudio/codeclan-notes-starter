@@ -5,9 +5,9 @@ Gatsby starter for creating students' notes at [CodeClan](https://codeclan.com/)
 ## Installation
 
 * Install [Gatsby]: `npm install --global gatsby-cli`
-* Install this starter: `gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
+* Install this starter: `gatsby new gatsby-blog https://github.com/ajrussellaudio/codeclan-notes-starter`
 
 ## Running in development
 
 * `gatsby develop`
-* Visit LINKLINK for full documentation
+* Visit http://localhost:8000/tutorial/ for full documentation
