@@ -7,7 +7,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js')
+    const lesson = path.resolve('./src/templates/lesson.js')
     resolve(
       graphql(
         `
@@ -36,21 +36,19 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           reject(result.errors)
         }
 
-        // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges
+        // Create lessons pages.
+        const lessons = result.data.allMarkdownRemark.edges
 
-        _.each(posts, (post, index) => {
+        _.each(lessons, (post, index) => {
           const previous =
-            index === posts.length - 1 ? false : posts[index + 1].node
-          const next = index === 0 ? false : posts[index - 1].node
+            index === lessons.length - 1 ? false : lessons[index + 1].node
+          const next = index === 0 ? false : lessons[index - 1].node
 
           createPage({
             path: post.node.fields.slug,
-            component: blogPost,
+            component: lesson,
             context: {
               slug: post.node.fields.slug,
-              previous,
-              next,
             },
           })
         })
