@@ -1,9 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
 import get from 'lodash/get'
 
-import Bio from '../components/Bio'
+import Footer from '../components/Footer'
 import ContentsBox from '../components/ContentsBox'
 import { rhythm, scale } from '../utils/typography'
 
@@ -21,12 +20,7 @@ class LessonTemplate extends React.Component {
         <h1>{lesson.frontmatter.title}</h1>
         <ContentsBox html={lesson.tableOfContents} />
         <div dangerouslySetInnerHTML={{ __html: lesson.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <Bio />
+        <Footer />
       </div>
     )
   }

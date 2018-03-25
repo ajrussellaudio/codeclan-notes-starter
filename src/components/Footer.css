@@ -1,0 +1,9 @@
+h2.return::before {
+  content: '<<< ';
+}
+
+h2.return {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(35, 114, 181, 0.5);
+  margin-bottom: 1rem;
+}
