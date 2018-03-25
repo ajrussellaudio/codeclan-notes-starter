@@ -57,7 +57,6 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            description
             objectives
             week
           }
