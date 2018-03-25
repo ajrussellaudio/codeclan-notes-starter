@@ -4,14 +4,15 @@ module.exports = {
     author: 'CodeClan Instructor Team',
     description: 'Notes for learning at CodeClan',
     siteUrl: 'https://codeclan.com',
+    weekNumber: 4,
   },
   pathPrefix: '/notes',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
+        path: `${__dirname}/lessons`,
+        name: 'lessons',
       },
     },
     {

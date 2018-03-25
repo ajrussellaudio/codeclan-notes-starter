@@ -13,7 +13,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         `
           {
             allMarkdownRemark(
-              sort: { fields: [frontmatter___order] }
+              sort: { fields: [frontmatter___week] }
               limit: 1000
             ) {
               edges {
@@ -23,7 +23,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                   }
                   frontmatter {
                     title
-                    order
+                    week
                   }
                 }
               }

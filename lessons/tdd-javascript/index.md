@@ -1,7 +1,7 @@
 ---
 title: Test Driven Development Using Assert and Mocha
 module: JavaScript
-order: 3
+week: 3
 ---
 
 **Duration: 120 minutes**

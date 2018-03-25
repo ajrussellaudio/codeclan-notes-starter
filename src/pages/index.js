@@ -10,6 +10,7 @@ class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    const weekNumber = get(this, 'props.data.site.siteMetadata.weekNumber')
 
     return (
       <div>
@@ -18,7 +19,7 @@ class BlogIndex extends React.Component {
         </Helmet>
         <Bio />
         {posts
-          .filter(({ node }) => get(node, 'frontmatter.order') <= 2)
+          .filter(({ node }) => get(node, 'frontmatter.week') < weekNumber)
           .map(({ node }) => {
             const title = get(node, 'frontmatter.title') || node.fields.slug
             return (
@@ -48,9 +49,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        weekNumber
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___order] }, limit: 1000) {
+    allMarkdownRemark(sort: { fields: [frontmatter___week] }, limit: 1000) {
       edges {
         node {
           excerpt
@@ -59,7 +61,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            order
+            week
           }
         }
       }
