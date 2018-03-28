@@ -2,6 +2,7 @@
 title: Inheritance
 module: Java
 week: 2
+day: 1
 objectives: ["Understand how inheritance works in Java"]
 ---
 

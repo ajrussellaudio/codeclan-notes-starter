@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    weekNumber: 1, // INCREASE THIS EVERY WEEK
+    date: {
+      week: 2, // INCREASE THIS EVERY WEEK, 1 to 16
+      day: 1, // INCREASE EVERY DAY OF WEEK, 1 to 5
+    },
     title: 'CodeClan',
     author: 'CodeClan Instructor Team',
     description: 'Notes for learning at CodeClan',

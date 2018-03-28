@@ -31,7 +31,8 @@ class BlogIndex extends React.Component {
         <Bio />
         <LessonList
           lessons={get(this, 'props.data.allMarkdownRemark.edges', [])}
-          weekNumber={get(this, 'props.data.site.siteMetadata.weekNumber', 1)}
+          thisWeek={get(this, 'props.data.site.siteMetadata.date.week', 1)}
+          today={get(this, 'props.data.site.siteMetadata.date.day', 1)}
         />
       </div>
     )
@@ -45,7 +46,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        weekNumber
+        date {
+          week
+          day
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___week] }, limit: 1000) {
@@ -59,6 +63,7 @@ export const pageQuery = graphql`
             title
             objectives
             week
+            day
           }
         }
       }

@@ -1,7 +1,8 @@
 ---
 title: Test Driven Development Using Assert and Mocha
 module: JavaScript
-week: 1
+week: 2
+day: 2
 duration: 120 minutes
 objectives: [
   "Be able to write basic tests using Node's Assert module",

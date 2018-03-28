@@ -9,7 +9,6 @@ class ContentsBox extends React.Component {
   }
 
   hiddenToggle() {
-    console.log('Clicked!')
     this.setState(prevState => ({
       hidden: !prevState.hidden,
     }))
