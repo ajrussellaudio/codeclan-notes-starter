@@ -34,7 +34,7 @@ const typography = new Typography({
   headerWeight: 600,
   bodyWeight: 400,
   boldWeight: 700,
-  overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
+  overrideStyles: ({ scale, rhythm }, options) => ({
     a: {
       color: colors.darkblue,
     },
@@ -48,7 +48,6 @@ const typography = new Typography({
       fontFamily: '"Source Code Pro", mono',
     },
     'h1,h2,h3,h4,h5,h6': {
-      // textTransform: 'lowercase',
       paddingBottom: rhythm(1 / 4),
       marginBottom: rhythm(1 / 4),
       color: colors.darkblue,
