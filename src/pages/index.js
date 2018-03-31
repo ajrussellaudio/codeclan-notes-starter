@@ -23,17 +23,31 @@ class BlogIndex extends React.Component {
       }
     }
 
+    const lessonsBeforeToday = get(
+      this,
+      'props.data.allMarkdownRemark.edges',
+      []
+    ).filter(lesson => {
+      console.log(lesson)
+      const lessonWeek = get(lesson, 'node.frontmatter.week')
+      const lessonDay = get(lesson, 'node.frontmatter.day')
+      const thisWeek = get(this, 'props.data.site.siteMetadata.date.week', 1)
+      const today = get(this, 'props.data.site.siteMetadata.date.day', 1)
+
+      return (
+        // lesson comes before this week, or
+        // lesson comes THIS week, on or before today
+        lessonWeek < thisWeek || (lessonWeek === thisWeek && lessonDay <= today)
+      )
+    })
+
     return (
       <div>
         <Helmet title={siteTitle}>
           <link rel="icon" type="image/png" href="/favicon.png" />
         </Helmet>
         <Bio />
-        <LessonList
-          lessons={get(this, 'props.data.allMarkdownRemark.edges', [])}
-          thisWeek={get(this, 'props.data.site.siteMetadata.date.week', 1)}
-          today={get(this, 'props.data.site.siteMetadata.date.day', 1)}
-        />
+        <LessonList lessons={lessonsBeforeToday} />
       </div>
     )
   }
