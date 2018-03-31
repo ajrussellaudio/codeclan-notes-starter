@@ -10,8 +10,10 @@ const DailyList = ({ lessons }) => {
   return (
     <div>
       {Object.keys(days).map(dayNumber => (
-        <details key={dayNumber}>
-          <summary>Day {dayNumber}</summary>
+        <details className="lesson-list" key={dayNumber}>
+          <summary>
+            <h6>Day {dayNumber}</h6>
+          </summary>
           {days[dayNumber].map(({ node }) => (
             <div key={node.fields.slug}>
               <LessonHeader {...node} />
@@ -29,8 +31,10 @@ const WeeklyList = ({ lessons }) => {
   return (
     <div>
       {Object.keys(weeks).map(weekNumber => (
-        <details key={weekNumber}>
-          <summary>Week {weekNumber}</summary>
+        <details className="lesson-list" key={weekNumber}>
+          <summary>
+            <h6>Week {weekNumber}</h6>
+          </summary>
           <DailyList lessons={weeks[weekNumber]} />
         </details>
       ))}

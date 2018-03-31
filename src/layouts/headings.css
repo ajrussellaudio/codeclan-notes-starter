@@ -7,16 +7,14 @@ h3::before {
 }
 
 h4::before,
-h5::before,
-h6::before {
+h5::before {
   content: '>>> ';
 }
 
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 {
   padding-top: 1rem;
   border-top: 1px solid rgba(35, 114, 181, 0.5);
 }

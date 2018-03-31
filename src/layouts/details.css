@@ -7,6 +7,37 @@ details > :not(summary) {
   padding-left: 1rem;
 }
 
+details.lesson-list > :not(summary) {
+  border-left: 0px;
+  padding-left: 1.5rem;
+}
+
 br {
   display: none;
+}
+
+details.lesson-list > summary {
+  display: inline;
+}
+
+details.lesson-list > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.lesson-list:hover > summary > h6 {
+  color: #3da9dd;
+  cursor: pointer;
+}
+
+details.lesson-list > summary > h6 {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+details.lesson-list > summary > h6::before {
+  content: '> ';
+}
+
+details.lesson-list[open] > summary > h6::before {
+  content: 'v ';
 }
