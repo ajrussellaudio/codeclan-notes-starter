@@ -2,7 +2,7 @@
 title: Multiple Classes
 module: Intro to Programming
 week: 1
-day: 2
+day: 1
 ---
 
 ## Introduction
