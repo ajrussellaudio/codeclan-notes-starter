@@ -5,7 +5,20 @@ import groupBy from 'lodash/groupBy'
 import LessonHeader from './LessonHeader'
 import LessonDescription from './LessonDescription'
 
-const DailyList = ({ lessons }) => {
+const ListOfLessons = ({ lessons }) => {
+  return (
+    <div>
+      {lessons.map(({ node }) => (
+        <div key={node.fields.slug}>
+          <LessonHeader {...node} />
+          <LessonDescription {...node} />
+        </div>
+      ))}
+    </div>
+  )
+}
+
+const ListOfDays = ({ lessons }) => {
   const days = groupBy(lessons, 'node.frontmatter.day')
   return (
     <div>
@@ -14,36 +27,31 @@ const DailyList = ({ lessons }) => {
           <summary>
             <h6>Day {dayNumber}</h6>
           </summary>
-          {days[dayNumber].map(({ node }) => (
-            <div key={node.fields.slug}>
-              <LessonHeader {...node} />
-              <LessonDescription {...node} />
-            </div>
-          ))}
+          <ListOfLessons lessons={days[dayNumber]} />
         </details>
       ))}
     </div>
   )
 }
 
-const WeeklyList = ({ lessons }) => {
+const ListOfWeeks = ({ lessons }) => {
   const weeks = groupBy(lessons, 'node.frontmatter.week')
   return (
     <div>
       {Object.keys(weeks).map(weekNumber => (
-        <details className="lesson-list" key={weekNumber}>
+        <details className="lesson-list" key={weekNumber} open>
           <summary>
             <h6>Week {weekNumber}</h6>
           </summary>
-          <DailyList lessons={weeks[weekNumber]} />
+          <ListOfDays lessons={weeks[weekNumber]} />
         </details>
       ))}
     </div>
   )
 }
 
-const LessonList = ({ lessons, thisWeek, today }) => {
-  return <WeeklyList lessons={lessons} />
+const LessonList = ({ lessons }) => {
+  return <ListOfWeeks lessons={lessons} />
 }
 
 export default LessonList
