@@ -64,7 +64,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___week] }, limit: 1000) {
+    allMarkdownRemark(limit: 1000) {
       edges {
         node {
           excerpt

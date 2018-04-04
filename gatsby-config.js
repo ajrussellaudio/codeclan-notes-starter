@@ -9,7 +9,7 @@ module.exports = {
     description: 'Notes for learning at CodeClan',
     siteUrl: 'https://codeclan.com',
   },
-  pathPrefix: '/notes',
+  pathPrefix: '/codeclan-notes-starter',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
