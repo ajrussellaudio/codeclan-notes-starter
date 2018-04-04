@@ -77,7 +77,7 @@ h6 > code {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: slategray;
+  color: #828f9d;
 }
 
 .token.punctuation {
