@@ -1,0 +1,64 @@
+{
+  "assetsByChunkName": {
+    "path---tutorial": [
+      "path---tutorial-b0ebfce13c42084df71a.js",
+      "path---tutorial-b0ebfce13c42084df71a.js.map"
+    ],
+    "component---src-pages-index-js": [
+      "component---src-pages-index-js-e1480b317c1f080f994b.js",
+      "component---src-pages-index-js-e1480b317c1f080f994b.js.map"
+    ],
+    "path---": [
+      "path----557518bd178906f8d58a.js",
+      "path----557518bd178906f8d58a.js.map"
+    ],
+    "component---node-modules-gatsby-plugin-offline-app-shell-js": [
+      "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js",
+      "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js.map"
+    ],
+    "path---week-1-day-1-multiple-classes": [
+      "path---week-1-day-1-multiple-classes-a50f73f96edf06d64536.js",
+      "path---week-1-day-1-multiple-classes-a50f73f96edf06d64536.js.map"
+    ],
+    "component---src-layouts-index-js": [
+      "component---src-layouts-index-js-5285966ecc51f772523f.js",
+      "component---src-layouts-index-js-5285966ecc51f772523f.js.map"
+    ],
+    "component---src-templates-lesson-js": [
+      "component---src-templates-lesson-js-3d5070ff931608058595.js",
+      "component---src-templates-lesson-js-3d5070ff931608058595.js.map"
+    ],
+    "path---index": [
+      "path---index-1fda150dc0cbbe0948b4.js",
+      "path---index-1fda150dc0cbbe0948b4.js.map"
+    ],
+    "commons": [
+      "commons-e73459728ff64e648635.js",
+      "build-js-styles.css",
+      "commons-e73459728ff64e648635.js.map",
+      "build-js-styles.css.map"
+    ],
+    "path---week-2-day-1-inheritance": [
+      "path---week-2-day-1-inheritance-68894f15f401654ce7d0.js",
+      "path---week-2-day-1-inheritance-68894f15f401654ce7d0.js.map"
+    ],
+    "path---just-a-markdown": [
+      "path---just-a-markdown-d363a13dcc972bade523.js",
+      "path---just-a-markdown-d363a13dcc972bade523.js.map"
+    ],
+    "path---offline-plugin-app-shell-fallback": [
+      "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js",
+      "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "app": [
+      "app-f2c8923a83ce4108fad9.js",
+      "build-js-styles.css",
+      "app-f2c8923a83ce4108fad9.js.map",
+      "build-js-styles.css.map"
+    ],
+    "path---week-1-day-2-tdd-javascript": [
+      "path---week-1-day-2-tdd-javascript-6796bd7adc5455e05e7d.js",
+      "path---week-1-day-2-tdd-javascript-6796bd7adc5455e05e7d.js.map"
+    ]
+  }
+}

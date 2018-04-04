@@ -1,0 +1,170 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="preload" href="/codeclan-notes-starter/component---src-layouts-index-js-5285966ecc51f772523f.js" as="script"/><link rel="preload" href="/codeclan-notes-starter/component---src-templates-lesson-js-3d5070ff931608058595.js" as="script"/><link rel="preload" href="/codeclan-notes-starter/path---week-2-day-1-inheritance-68894f15f401654ce7d0.js" as="script"/><link rel="preload" href="/codeclan-notes-starter/app-f2c8923a83ce4108fad9.js" as="script"/><link rel="preload" href="/codeclan-notes-starter/commons-e73459728ff64e648635.js" as="script"/><style type="text/css">
+    .anchor {
+      float: left;
+      padding-right: 4px;
+      margin-left: -20px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var offset = element.offsetTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><title data-react-helmet="true">Inheritance | CodeClan</title><link data-react-helmet="true" rel="icon" type="image/png" href="/favicon.png"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.3 'Open Sans',sans-serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:#3C3C3B;font-family:'Open Sans',sans-serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;color:inherit;font-family:'Dosis',sans-serif;font-weight:600;text-rendering:optimizeLegibility;font-size:1.5rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;color:inherit;font-family:'Dosis',sans-serif;font-weight:600;text-rendering:optimizeLegibility;font-size:1.27542rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;color:inherit;font-family:'Dosis',sans-serif;font-weight:600;text-rendering:optimizeLegibility;font-size:1.17608rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;color:inherit;font-family:'Dosis',sans-serif;font-weight:600;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;color:inherit;font-family:'Dosis',sans-serif;font-weight:600;text-rendering:optimizeLegibility;font-size:0.92211rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;color:inherit;font-family:'Dosis',sans-serif;font-weight:600;text-rendering:optimizeLegibility;font-size:0.88547rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}ul{margin-left:1.3rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.3rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;font-size:0.85rem;line-height:1.3rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;font-size:0.92211rem;line-height:1.3rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}blockquote{margin-left:1.3rem;margin-right:1.3rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;display:none;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.3rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.3rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.3rem;margin-bottom:calc(1.3rem / 2);margin-top:calc(1.3rem / 2);}li > ul{margin-left:1.3rem;margin-bottom:calc(1.3rem / 2);margin-top:calc(1.3rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.3rem / 2);}code{font-size:0.85rem;line-height:1.3rem;font-family:"Source Code Pro", mono;}kbd{font-size:0.85rem;line-height:1.3rem;}samp{font-size:0.85rem;line-height:1.3rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:0.86667rem;padding-right:0.86667rem;padding-top:0.65rem;padding-bottom:calc(0.65rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}a{color:#2372B5;}a:hover{color:#3DA9DD;}h1,h2,h3,h4,h5,h6{padding-bottom:0.325rem;margin-bottom:0.325rem;color:#2372B5;}@media only screen and (max-width:768px){blockquote{margin-left:-0.975rem;margin-right:0;padding-left:0.65rem;}}</style><link href="//fonts.googleapis.com/css?family=Dosis:800,600,400|Open+Sans:400,400i,700|Source+Code+Pro:400" rel="stylesheet" type="text/css"/><style id="gatsby-inlined-css">code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:none;text-shadow:0 1px rgba(0,0,0,.3);font-family:Source Code Pro,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}.gatsby-highlight{margin-bottom:1rem}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code,pre[class*=language-]{background:#272822}:not(pre)>code{color:#d72b3f;background-color:#f7f7f9;border:1px solid #e1e1e8;border-radius:.3em}:not(pre)>code,h1>code,h2>code,h3>code,h4>code,h5>code,h6>code{position:relative;top:-.05rem;padding:.1em .3em;white-space:normal}h1>code,h2>code,h3>code,h4>code,h5>code,h6>code{color:#2372b5;background:#eee;border-radius:.3em;border:1px solid rgba(35,114,181,.5)}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#828f9d}.token.punctuation{color:#f8f8f2}.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}h2:before{content:"> "}h3:before{content:">> "}h4:before,h5:before{content:">>> "}h2,h3,h4,h5{padding-top:1rem;border-top:1px solid rgba(35,114,181,.5)}details>summary{margin-bottom:1rem}details>:not(summary){border-left:3px solid #000;padding-left:1rem}details.lesson-list>:not(summary){border-left:0;padding-left:1.5rem}br{display:none}details.lesson-list>summary{display:inline}details.lesson-list>summary::-webkit-details-marker{display:none}details.lesson-list:hover>summary>h6{color:#3da9dd;cursor:pointer}details.lesson-list>summary>h6{padding-bottom:0;margin-bottom:0}details.lesson-list>summary>h6:before{content:"> "}details.lesson-list[open]>summary>h6:before{content:"v "}h2.return:before{content:"<<< "}h2.return{padding-bottom:1rem;border-bottom:1px solid rgba(35,114,181,.5);margin-bottom:1rem}.contents-box{line-height:.8rem;font-size:.8rem}</style></head><body><div id="___gatsby"><div style="max-width:39rem;margin-left:auto;margin-right:auto;padding:1.95rem 0.975rem;" data-reactroot="" data-reactid="1" data-react-checksum="1669237675"><div data-reactid="2"><!-- react-empty: 3 --><h1 data-reactid="4">Inheritance</h1><div class="contents-box" data-reactid="5"><h4 data-reactid="6"><a data-reactid="7"><!-- react-text: 8 -->Contents [<!-- /react-text --><!-- react-text: 9 -->show<!-- /react-text --><!-- react-text: 10 -->]<!-- /react-text --></a></h4></div><div data-reactid="11"><h2 id="intro"><a href="#intro" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Intro</h2>
+<p>When we were learning Ruby, we saw how useful it was to gather classes together when they share properties or functionality. We used <em>inheritance</em> to describe the relationship between superclasses and subclasses.</p>
+<blockquote>
+<p>Scan the room for blank expressions. Have a quick recap of inheritance in Ruby if necessary.</p>
+</blockquote>
+<div class="gatsby-highlight">
+      <pre class="language-ruby"><code class="language-ruby"><span class="token keyword">class</span> <span class="token class-name">Vehicle</span>
+  <span class="token comment"># ...</span>
+  <span class="token keyword">def</span> start_engine
+    <span class="token string">"Vrmmmm!"</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Car</span> <span class="token operator">&lt;</span> <span class="token constant">Vehicle</span>
+
+<span class="token keyword">end</span>
+</code></pre>
+      </div>
+<p>The same concept exists in Java, and although the syntax is a little different, the idea is much the same. We can use the ‘extends’ keyword to use inheritance.</p>
+<div class="gatsby-highlight">
+      <pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> numWheels <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Car</span> <span class="token keyword">extends</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getNumWheels</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>numWheels<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>We can see from the example above that the Car class has inherited the numWheels property from the parent vehicle class. If we want, we can <em>override</em> the property’s value with something new.</p>
+<div class="gatsby-highlight">
+      <pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> numWheels <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Motorbike</span> <span class="token keyword">extends</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token function">Motorbike</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    numWheels <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>Note that we have to override the instance variable in the constructor.</p>
+<p>We can override methods to do something specific for that class:</p>
+<div class="gatsby-highlight">
+      <pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> String <span class="token function">startEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">"Vrrrm!"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Car</span> <span class="token keyword">extends</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> String <span class="token function">startEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">"Vrrrm! I'm a car!"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<h2 id="super"><a href="#super" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Super!</h2>
+<p>Just as in Ruby, we can use the <code>super</code> keyword to trigger functionality from the parent class. We can refactor the code above to be more DRY.</p>
+<div class="gatsby-highlight">
+      <pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> String <span class="token function">startEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">"Vrrrm!"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Car</span> <span class="token keyword">extends</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> String <span class="token function">startEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">startEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" I'm a car!"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>When the <code>super()</code> method is called on its own, it will call the parent class’ constructor.</p>
+<div class="gatsby-highlight">
+      <pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> numWheels<span class="token punctuation">;</span>
+
+  <span class="token keyword">public</span> <span class="token function">Vehicle</span><span class="token punctuation">(</span><span class="token keyword">int</span> numWheels<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>numWheels <span class="token operator">=</span> numWheels<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Car</span> <span class="token keyword">extends</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token keyword">int</span> numWheels<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>numWheels<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>In this example, when we instantiate a new car, we will pass an integer parameter to the parent vehicle class:</p>
+<p><code>Car fiesta = new Car(4);</code></p>
+<h2 id="types-of-inheritance"><a href="#types-of-inheritance" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types of inheritance</h2>
+<p>So far, we have been using single inheritance, where our Car class inherits from a single parent, Vehicle. We can also create an <em>inheritance chain</em>, where a class inherits from more than one layer of parent classes. For example:</p>
+<div class="gatsby-highlight">
+      <pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Car</span> <span class="token keyword">extends</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ElectricCar</span> <span class="token keyword">extends</span> <span class="token class-name">Car</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>However, we can never inherit directly from more than one parent class. This would be illegal:</p>
+<div class="gatsby-highlight">
+      <pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">ElectricCar</span> <span class="token keyword">extends</span> <span class="token class-name">Car</span><span class="token punctuation">,</span> Vehicle <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<h2 id="task-optional---20-minutes"><a href="#task-optional---20-minutes" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Task (Optional) - 20 minutes</h2>
+<p>Create your own inheritance chain for modelling various types of animal.</p>
+<ul>
+<li>Your base class should be Animal, and should have methods for <code>eat()</code> and <code>breathe()</code>.</li>
+<li>Create a subclass of Animal called Mammal. Mammals should have a <code>brushHair()</code> method.</li>
+<li>Create two further subclasses of Mammal: Human and Chimpanzee. They should have a <code>speak()</code> method.</li>
+</ul>
+<p>Make each method return a suitable string. Check that you can create a human and a chimpanzee object, and make sure that they can each eat, breathe, brush their hair, and speak.</p></div><footer data-reactid="12"><a href="/codeclan-notes-starter/" data-reactid="13"><h2 class="return" data-reactid="14">Return to Index</h2></a><div style="display:flex;margin-bottom:0;" data-reactid="15"><img src="/codeclan-notes-starter/static/profile-pic.3068d96e.png" alt="Kyle Mathews" style="margin-right:0.65rem;margin-bottom:0;width:2.6rem;height:2.6rem;" data-reactid="16"/><p data-reactid="17"><strong data-reactid="18">CodeClan</strong><!-- react-text: 19 --> is Scotland&#x27;s award winning digital skills academy, based in Edinburgh and Glasgow.<!-- /react-text --><!-- react-text: 20 --> <!-- /react-text --><a href="https://codeclan.com/" data-reactid="21">Find out more</a><!-- react-text: 22 -->.<!-- /react-text --></p></div></footer></div><span style="display:block;clear:both;" data-reactid="23"> </span></div></div><script id="webpack-manifest">/*<![CDATA[*/window.webpackManifest={"231608221292675":"app-f2c8923a83ce4108fad9.js","99219681209289":"component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js","136703138138285":"component---src-templates-lesson-js-3d5070ff931608058595.js","35783957827783":"component---src-pages-index-js-e1480b317c1f080f994b.js","60335399758886":"path----557518bd178906f8d58a.js","210333531512890":"path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js","202636221882170":"path---just-a-markdown-d363a13dcc972bade523.js","5469536591921":"path---tutorial-b0ebfce13c42084df71a.js","104374533566041":"path---week-1-day-1-multiple-classes-a50f73f96edf06d64536.js","278637721748063":"path---week-1-day-2-tdd-javascript-6796bd7adc5455e05e7d.js","171562772603174":"path---week-2-day-1-inheritance-68894f15f401654ce7d0.js","142629428675168":"path---index-1fda150dc0cbbe0948b4.js","114276838955818":"component---src-layouts-index-js-5285966ecc51f772523f.js"}/*]]>*/</script><script>
+  
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'undefined', 'auto');
+  </script><script>/*<![CDATA[*/!function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",["/codeclan-notes-starter/commons-e73459728ff64e648635.js","/codeclan-notes-starter/app-f2c8923a83ce4108fad9.js","/codeclan-notes-starter/path---week-2-day-1-inheritance-68894f15f401654ce7d0.js","/codeclan-notes-starter/component---src-templates-lesson-js-3d5070ff931608058595.js","/codeclan-notes-starter/component---src-layouts-index-js-5285966ecc51f772523f.js"])/*]]>*/</script></body></html>

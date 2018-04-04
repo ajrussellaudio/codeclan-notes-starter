@@ -1,0 +1,614 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="preload" href="/codeclan-notes-starter/component---src-layouts-index-js-5285966ecc51f772523f.js" as="script"/><link rel="preload" href="/codeclan-notes-starter/component---src-templates-lesson-js-3d5070ff931608058595.js" as="script"/><link rel="preload" href="/codeclan-notes-starter/path---week-1-day-2-tdd-javascript-6796bd7adc5455e05e7d.js" as="script"/><link rel="preload" href="/codeclan-notes-starter/app-f2c8923a83ce4108fad9.js" as="script"/><link rel="preload" href="/codeclan-notes-starter/commons-e73459728ff64e648635.js" as="script"/><style type="text/css">
+    .anchor {
+      float: left;
+      padding-right: 4px;
+      margin-left: -20px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var offset = element.offsetTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><title data-react-helmet="true">Test Driven Development Using Assert and Mocha | CodeClan</title><link data-react-helmet="true" rel="icon" type="image/png" href="/favicon.png"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.3 'Open Sans',sans-serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:#3C3C3B;font-family:'Open Sans',sans-serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;color:inherit;font-family:'Dosis',sans-serif;font-weight:600;text-rendering:optimizeLegibility;font-size:1.5rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;color:inherit;font-family:'Dosis',sans-serif;font-weight:600;text-rendering:optimizeLegibility;font-size:1.27542rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;color:inherit;font-family:'Dosis',sans-serif;font-weight:600;text-rendering:optimizeLegibility;font-size:1.17608rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;color:inherit;font-family:'Dosis',sans-serif;font-weight:600;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;color:inherit;font-family:'Dosis',sans-serif;font-weight:600;text-rendering:optimizeLegibility;font-size:0.92211rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;color:inherit;font-family:'Dosis',sans-serif;font-weight:600;text-rendering:optimizeLegibility;font-size:0.88547rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}ul{margin-left:1.3rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.3rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;font-size:0.85rem;line-height:1.3rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;font-size:0.92211rem;line-height:1.3rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}blockquote{margin-left:1.3rem;margin-right:1.3rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;display:none;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.3rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.3rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.3rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.3rem;margin-bottom:calc(1.3rem / 2);margin-top:calc(1.3rem / 2);}li > ul{margin-left:1.3rem;margin-bottom:calc(1.3rem / 2);margin-top:calc(1.3rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.3rem / 2);}code{font-size:0.85rem;line-height:1.3rem;font-family:"Source Code Pro", mono;}kbd{font-size:0.85rem;line-height:1.3rem;}samp{font-size:0.85rem;line-height:1.3rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:0.86667rem;padding-right:0.86667rem;padding-top:0.65rem;padding-bottom:calc(0.65rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}a{color:#2372B5;}a:hover{color:#3DA9DD;}h1,h2,h3,h4,h5,h6{padding-bottom:0.325rem;margin-bottom:0.325rem;color:#2372B5;}@media only screen and (max-width:768px){blockquote{margin-left:-0.975rem;margin-right:0;padding-left:0.65rem;}}</style><link href="//fonts.googleapis.com/css?family=Dosis:800,600,400|Open+Sans:400,400i,700|Source+Code+Pro:400" rel="stylesheet" type="text/css"/><style id="gatsby-inlined-css">code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:none;text-shadow:0 1px rgba(0,0,0,.3);font-family:Source Code Pro,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}.gatsby-highlight{margin-bottom:1rem}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code,pre[class*=language-]{background:#272822}:not(pre)>code{color:#d72b3f;background-color:#f7f7f9;border:1px solid #e1e1e8;border-radius:.3em}:not(pre)>code,h1>code,h2>code,h3>code,h4>code,h5>code,h6>code{position:relative;top:-.05rem;padding:.1em .3em;white-space:normal}h1>code,h2>code,h3>code,h4>code,h5>code,h6>code{color:#2372b5;background:#eee;border-radius:.3em;border:1px solid rgba(35,114,181,.5)}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#828f9d}.token.punctuation{color:#f8f8f2}.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}h2:before{content:"> "}h3:before{content:">> "}h4:before,h5:before{content:">>> "}h2,h3,h4,h5{padding-top:1rem;border-top:1px solid rgba(35,114,181,.5)}details>summary{margin-bottom:1rem}details>:not(summary){border-left:3px solid #000;padding-left:1rem}details.lesson-list>:not(summary){border-left:0;padding-left:1.5rem}br{display:none}details.lesson-list>summary{display:inline}details.lesson-list>summary::-webkit-details-marker{display:none}details.lesson-list:hover>summary>h6{color:#3da9dd;cursor:pointer}details.lesson-list>summary>h6{padding-bottom:0;margin-bottom:0}details.lesson-list>summary>h6:before{content:"> "}details.lesson-list[open]>summary>h6:before{content:"v "}h2.return:before{content:"<<< "}h2.return{padding-bottom:1rem;border-bottom:1px solid rgba(35,114,181,.5);margin-bottom:1rem}.contents-box{line-height:.8rem;font-size:.8rem}</style></head><body><div id="___gatsby"><div style="max-width:39rem;margin-left:auto;margin-right:auto;padding:1.95rem 0.975rem;" data-reactroot="" data-reactid="1" data-react-checksum="85817343"><div data-reactid="2"><!-- react-empty: 3 --><h1 data-reactid="4">Test Driven Development Using Assert and Mocha</h1><div class="contents-box" data-reactid="5"><h4 data-reactid="6"><a data-reactid="7"><!-- react-text: 8 -->Contents [<!-- /react-text --><!-- react-text: 9 -->show<!-- /react-text --><!-- react-text: 10 -->]<!-- /react-text --></a></h4></div><div data-reactid="11"><h2 id="introduction"><a href="#introduction" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h2>
+<p>We’ve learned the fundamentals of JavaScript and we’re able to use them to write some fairly robust code, but how can we be sure that our code works?</p>
+<p>We could use <code>console.log()</code> to verify that our functions have the expected output, but then our code would be littered with redundant statements that aren’t relevant to its functionality.</p>
+<p>We could remove those <code>console.log()</code>s once we’re satisfied that our code works, but then how would we test that our code still works if we were to refactor it?</p>
+<p>Unit tests to the rescue!</p>
+<h2 id="assert"><a href="#assert" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Assert</h2>
+<p>Node ships with a basic testing module out of the box which we can use to unit test our code. This module provides us with a set of assertion methods that can be used for testing.</p>
+<p>These testing tools are quite primitive, in that they don’t offer much functionality, and are usually used in tandem with a testing framework like Mocha as a result.</p>
+<p>We’ll begin by taking a look at Node’s Assert module on it’s own so that we can get a feel for how it works before we start using it with a testing framework.</p>
+<h2 id="writing-tests-with-assert"><a href="#writing-tests-with-assert" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing Tests with Assert</h2>
+<p>The first thing that we’ll need to do is create a .js file to work in.</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash"><span class="token function">touch</span> play.js
+</code></pre>
+      </div>
+<p>Node ships with the <code>assert</code> module out of the box, but if we want to use it then we have to <code>require</code> it.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// play.js</span>
+
+<span class="token keyword">const</span> assert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'assert'</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>Now we’re ready to start writing some basic tests.</p>
+<h3 id="assertequal"><a href="#assertequal" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>assert.equal()</code></h3>
+<p>Now that we have access to the <code>assert</code> module, we can use any of the methods that come with it. We can use the <code>equal()</code> method to check if two values are the same, just like you might have done when unit testing in other languages.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js">assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>We can then run our tests in the same way that we would run any other .js file.</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash">node play.js
+</code></pre>
+      </div>
+<p>Notice that we don’t get any feedback at all. This isn’t ideal. Node will only tell us if our tests are failing. Let’s break our test and see what happens.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js">assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash">node play.js
+
+<span class="token comment"># -> AssertionError [ERR_ASSERTION]: true == false</span>
+</code></pre>
+      </div>
+<blockquote>
+<p>Note: Assert will only show us one failing test at a time. Comment out any failing tests before moving on</p>
+</blockquote>
+<p>This is better than nothing but it isn’t very descriptive or expressive.</p>
+<p>Another potential issue that we could encounter when using <code>equal()</code> is that, as we can see from the above AssertionError, it uses JavaScript’s abstract equality operator (<code>==</code>).</p>
+<p>If the two parameters are of different types then JavaScript will first try to find a common type for them before determining whether or not they are equal.</p>
+<p>The following test will convert the string <code>'1'</code> to a numerical value before performing a strict comparison on them, deciding that they are equal and passing.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js">assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'1'</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>Just like using the abstract equality operator (<code>==</code>) elsewhere in our code this can lead to unexpected behaviours, such as the following test passing.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js">assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">!</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>We should be as specific as possible when testing therefore avoid using <code>equal()</code>.</p>
+<h3 id="assertstrictequal"><a href="#assertstrictequal" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>assert.strictEqual()</code></h3>
+<p>Assert gives us another method, <code>strictEqual()</code>, which uses JavaScripts strict equality operator (<code>===</code>). As a general rule of thumb we should use that instead of <code>equal()</code> so that we can be certain that our tests are passing or failing for the right reasons.</p>
+<p>The following test will fail.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js">assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'1'</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash">node play.js
+
+<span class="token comment"># -> AssertionError [ERR_ASSERTION]: 1 === '1'</span>
+</code></pre>
+      </div>
+<p>The two values are not strictly the same so this is typically the desired behaviour of our tests.</p>
+<p>There is one more thing that we need to know when writing our assertions with Assert: when comparing objects using <code>equal()</code> or <code>strictEqual()</code> JavaScript will check if they are the same object.</p>
+<p>The following test will fail as a result of this.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js">assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>The arrays look the same but they aren’t physically the same array.</p>
+<p>The following test, however, will pass because both variables refer to the exact same array.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> firstArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">const</span> secondArray <span class="token operator">=</span> firstArray
+assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>firstArray<span class="token punctuation">,</span> secondArray<span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<h3 id="assertdeepequal-and-assertdeepstrictequal"><a href="#assertdeepequal-and-assertdeepstrictequal" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>assert.deepEqual()</code> and <code>assert.deepStrictEqual()</code></h3>
+<p>Assert gives us another set of methods; <code>deepEqual()</code> and <code>deepStrictEqual()</code>. These methods look at the values contained within the object and use those to determine if the objects are equal, rather than checking if the object are the same object.</p>
+<p>The following test will pass because even though the first and second parameters are not the same array they contain values which are equal.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js">assert<span class="token punctuation">.</span><span class="token function">deepEqual</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>Similarly to <code>equal()</code>, <code>deepEqual()</code> uses JavaScript’s abstract equality operator (<code>==</code>). We can mix <code>String</code>s and <code>Number</code>s and the test will still pass.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js">assert<span class="token punctuation">.</span><span class="token function">deepEqual</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>We can use <code>deepStrictEqual()</code>, which uses JavaScript’s strict equality operator (<code>===</code>) to avoid this behaviour. The following test will fail because the contents of the array are not strictly the same values.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js">assert<span class="token punctuation">.</span><span class="token function">deepStrictEqual</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">test</span>
+
+<span class="token comment"># -> AssertionError [ERR_ASSERTION]: [ 1, 2, 3 ] deepStrictEqual [ '1', '2', '3' ]</span>
+</code></pre>
+      </div>
+<p>Third-party assertion libraries are available if you need something more fully featured but Assert should be able to take care of all of our needs for the time being.</p>
+<h2 id="mocha"><a href="#mocha" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mocha</h2>
+<p>Node’s built in assert module is very basic as you can see. It gives us some methods that we can use to test our code but that’s all. It doesn’t even tell us if our tests are passing. If we only used <code>assert</code> to test our code then our test files could quickly become an unintelligible mess of calls to <code>equal()</code> unless we wrote our own testing framework to organise them.</p>
+<p>Mocha has some nice features that help us to organise our tests and gives us much more readable and descriptive output.</p>
+<h2 id="writing-unit-tests-with-mocha-and-assert"><a href="#writing-unit-tests-with-mocha-and-assert" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing Unit Tests With Mocha and Assert</h2>
+<p>Now that we’ve seen how some of the methods that we can get from Assert work, let’s create a model, employing TDD, and look at how we can use Mocha to better organise and run our tests.</p>
+<p>Before we do, it’s worth mentioning that Mocha supports a number of different syntaxes. The type we’re going to use is <em>Behaviour Driven Development</em>, or BDD.</p>
+<p>BDD is an extension of TDD which attempts to focus on the user, and the product. Tests written in a BDD style will follow the format “It should…”, and they should tie in closely to the user stories that you or your UX colleagues should have written.</p>
+<blockquote>
+<p>(As a… I want to… So that…)</p>
+</blockquote>
+<p>The first thing that we’ll need to do is create some files to work in. We’re going to model a taxi, so we’ll need a file for our <code>Taxi</code> model and corresponding spec file. We typically create a specs folder to keep our tests organised separately from our models and name our test files the same as our models with a _spec suffix. For example, the test file for our taxi model will be called taxi_spec.js.</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash"><span class="token function">touch</span> taxi.js
+<span class="token function">mkdir</span> specs
+<span class="token function">touch</span> specs/taxi_spec.js
+</code></pre>
+      </div>
+<p>We’re going to be using Mocha to write and run our tests, so we have to install it using npm.</p>
+<p>We’ll use Mocha during development but our tests aren’t necessary to actually run our application, so we’ll save Mocha as a dev dependency.</p>
+<p>If someone was to then clone our project with the intention of running it without modifying the code, they could use <code>npm install --production</code> to avoid installing our dev dependencies.</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> init
+<span class="token function">npm</span> <span class="token function">install</span> --save-dev mocha
+</code></pre>
+      </div>
+<p>We have a test file and we’ve installed Mocha, so now we have everything that we need. How do we run our tests?</p>
+<p>We want to use Mocha to run all of the files in our specs folder.</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash">mocha specs
+
+<span class="token comment"># -> zsh: command not found: mocha</span>
+</code></pre>
+      </div>
+<p>We installed Mocha as a dependency of our project, but our Terminal has no idea what Mocha is.</p>
+<p>There are a few ways that we could solve this problem: we could install Mocha globally, which would allow us to use this command, but then if another developer were to try to run our code then they would have to install Mocha too. Instead we can use an npm script to tell npm to run our tests with Mocha. We installed Mocha using npm, so npm knows what Mocha is.</p>
+<p>We can create npm scripts by adding a name to refer to them by and the command that we want to execute as a key-value pair to the <code>"scripts"</code> object in our package.json.</p>
+<p>npm expects us to have a <code>"test"</code> script, so it provides one by default. We can then update it’s value so that it runs our tests for us.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// package.json</span>
+
+<span class="token string">"scripts"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token string">"test"</span><span class="token punctuation">:</span> <span class="token string">"mocha specs"</span> <span class="token comment">// UPDATED</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre>
+      </div>
+<p>Now that we’ve added our npm script we can run it using <code>npm test</code> while we’re at the same level as our package.json.</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">test</span>
+
+<span class="token comment"># -> 0 passing</span>
+</code></pre>
+      </div>
+<p>When we run <code>npm test</code> npm looks at the scripts that we have defined in our for the key <code>"test"</code>, when it finds it executes the string value in Terminal for us; in this case <code>mocha specs</code>.</p>
+<p>The script runs okay but we have 0 passing tests because we haven’t written any tests yet.</p>
+<p>If we want to start writing tests then the first thing that we have to do is require Assert and the model that we want to test. We’ll be testing our <code>Taxi</code> model.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// taxi_spec.js</span>
+
+<span class="token keyword">const</span> assert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'assert'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> Taxi <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../taxi.js'</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<h3 id="describe"><a href="#describe" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>describe()</code></h3>
+<p>Before we write our first test let’s take a look at one of the organisational functions that Mocha gives us: <code>describe()</code>.</p>
+<p>Describe can be used to group similar tests. In this case we are going to use <code>describe()</code> to label our tests with the name of the relevant model. This will be displayed in the Terminal output when we run our tests. Later on when we have a lot of different models this will make the output of our tests a lot easier to read.</p>
+<p>We’ll call Mocha’s <code>describe()</code> function and pass it two arguments:</p>
+<ol>
+<li>The name of the model that we’re testing as a <code>String</code>, in this case <code>'Taxi'</code></li>
+<li>A function which will contain all of the tests associated with the thing that we’re describing. This syntax might look a little bit strange right now but we’ll learn more about this very soon.</li>
+</ol>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'Taxi'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<h3 id="it"><a href="#it" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>it()</code></h3>
+<p>Inside of the function that we’re passing to <code>describe()</code> we can use the <code>it()</code> function for each of our test cases.</p>
+<p>For the moment, we’re just going to pass a single argument to <code>it()</code>: a <code>String</code> describing the test case.</p>
+<p>We’re going to add a manufacturer property to our <code>Taxi</code> so let’s describe our test accordingly.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'Taxi'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should have a manufacturer'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>When combined with <code>it()</code> our test names should be readable and expressive. For example:</p>
+<ul>
+<li><code>it('should have a name')</code></li>
+<li><code>it('can calculate the number of days until Christmas')</code></li>
+</ul>
+<p>Ideally, these should come from the user stories that you or your colleagues have written. This will help to keep you focussed on your product, and your MVP.</p>
+<p>This also makes the output of our tests meaningful and errors easier to interpret as a result. If we run <code>npm test</code> now we can see what our test output will look like.</p>
+<p>Notice that this test is listed as being <code>pending</code>. Pending tests are just tests that we haven’t tackled yet - they’re neither passing, nor failing.</p>
+<p>It can be quite useful to write a few pending tests at once, so that we can see what we have to do. Let’s add another:</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'Taxi'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should have a manufacturer'</span><span class="token punctuation">)</span>
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should have a model'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>Now, we should have two pending tests. Let’s get started on writing the body of the test.</p>
+<p>In order to write the body of the test, just as we did with <code>describe</code>, we have to pass a function as the second argument to <code>it()</code>.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'Taxi'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should have a manufacturer'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should have a model'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>This <em>anonymous</em> function will contain the setup for our test, and our <code>assert</code>.</p>
+<h3 id="arrange-act-assert"><a href="#arrange-act-assert" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arrange-Act-Assert</h3>
+<p>As with many other testing frameworks we can use the arrange-act-assert pattern here.</p>
+<ol>
+<li>Arrange: Perform any setup that might be required for the test</li>
+<li>Act: Perform the action that we want to test</li>
+<li>Assert: Check that our action had the expected result</li>
+</ol>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'Taxi'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should have a manufacturer'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> taxi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Taxi</span><span class="token punctuation">(</span><span class="token string">'Toyota'</span><span class="token punctuation">,</span> <span class="token string">'Prius'</span><span class="token punctuation">)</span> <span class="token comment">// Arrange</span>
+    <span class="token keyword">const</span> actual <span class="token operator">=</span> taxi<span class="token punctuation">.</span>manufacturer <span class="token comment">// Act</span>
+    assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span>actual<span class="token punctuation">,</span> <span class="token string">'Toyota'</span><span class="token punctuation">)</span> <span class="token comment">// Assert</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should have a model'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> taxi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Taxi</span><span class="token punctuation">(</span><span class="token string">'Toyota'</span><span class="token punctuation">,</span> <span class="token string">'Prius'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> actual <span class="token operator">=</span> taxi<span class="token punctuation">.</span>model
+    assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span>actual<span class="token punctuation">,</span> <span class="token string">'Prius'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>When employing TDD we should only be working on one test at a time. We can mark any tests that we don’t want to run with <code>xit()</code>, which will tell Mocha to skip them. Let’s skip the second test, so that we can concentrate on the first.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token function">xit</span><span class="token punctuation">(</span><span class="token string">'should have a model'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// UPDATED</span>
+  <span class="token keyword">const</span> taxi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Taxi</span><span class="token punctuation">(</span><span class="token string">'Toyota'</span><span class="token punctuation">,</span> <span class="token string">'Prius'</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> actual <span class="token operator">=</span> taxi<span class="token punctuation">.</span>model
+  assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span>actual<span class="token punctuation">,</span> <span class="token string">'Prius'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>We’ve written our test but it should fail because we haven’t written the code to make it pass yet. We should always run our test at this point so that we can see it fail.</p>
+<p>If you’ve never seen a test fail then you can’t be sure that it’s a good test, or that it tests anything at all.</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">test</span>
+
+<span class="token comment"># -> 1 failing</span>
+<span class="token comment"># -> TypeError: Taxi is not a constructor</span>
+</code></pre>
+      </div>
+<p>Now we know exactly where to start. Let’s create the constructor function for our <code>Taxi</code>, making sure not to forget our <code>module.exports</code>.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// taxi.js</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Taxi</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>manufacturer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>manufacturer <span class="token operator">=</span> manufacturer
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> Taxi
+</code></pre>
+      </div>
+<p>Now we should be able to run our test again and it should pass.</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">test</span>
+
+<span class="token comment"># -> 1 passing</span>
+</code></pre>
+      </div>
+<p>Next we’re going to add a model property to our <code>Taxi</code> so we have to tell Mocha not to skip the second test.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// taxi_spec.js</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'Taxi'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should have a model'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// UPDATED</span>
+    <span class="token keyword">const</span> taxi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Taxi</span><span class="token punctuation">(</span><span class="token string">'Toyota'</span><span class="token punctuation">,</span> <span class="token string">'Prius'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> actual <span class="token operator">=</span> taxi<span class="token punctuation">.</span>model
+    assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span>actual<span class="token punctuation">,</span> <span class="token string">'Prius'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>Again, we should run our test so that we can see it fail. If it passed already then we would know that we had made a mistake.</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">test</span>
+
+<span class="token comment"># -> 1 passing</span>
+<span class="token comment"># -> 1 failing</span>
+<span class="token comment"># -> AssertionError [ERR_ASSERTION]: undefined === 'Prius'</span>
+</code></pre>
+      </div>
+<p><code>taxi.model</code> gives us back undefined, not the <code>String</code> that we want. That’s because we haven’t set that property in the constructor yet.</p>
+<p>Let’s go ahead and add that model property to our <code>Taxi</code>.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// taxi.js</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Taxi</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>manufacturer<span class="token punctuation">,</span> model<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>manufacturer <span class="token operator">=</span> manufacturer
+  <span class="token keyword">this</span><span class="token punctuation">.</span>model <span class="token operator">=</span> model
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>Now we should be able to run our tests again and see them both pass.</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">test</span>
+
+<span class="token comment"># -> 2 passing</span>
+</code></pre>
+      </div>
+<h3 id="beforeeach"><a href="#beforeeach" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>beforeEach()</code></h3>
+<p>So far, so good. There’s some repetition in our test cases though. We’re creating a new <code>Taxi</code> object in each test.</p>
+<p>Mocha gives us some handy hooks which we can use to execute code at specific points during testing. In this case we want to create an object before each test, so we can use <code>beforeEach()</code>.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// taxi_spec.js</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'Taxi'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>In contrast to the Mocha functions that we’ve used so far <code>beforeEach()</code> doesn’t require a <code>String</code>. We’ll just pass it the function that we want to execute before each of our test cases.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token keyword">let</span> taxi
+
+<span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  taxi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Taxi</span><span class="token punctuation">(</span><span class="token string">'Toyota'</span><span class="token punctuation">,</span> <span class="token string">'Prius'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<blockquote>
+<p>We have to declare any variables outside of <code>beforeEach()</code> to prevent them from being scoped locally to that function.</p>
+</blockquote>
+<p>We can now remove the <code>Taxi</code> objects that we created in each test and use the one that we’re creating before each test using the <code>beforeEach()</code> hook.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should have a manufacturer'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// const Taxi = new Taxi('Toyota', 'Prius'); REMOVED</span>
+  <span class="token keyword">const</span> actual <span class="token operator">=</span> taxi<span class="token punctuation">.</span>manufacturer
+  assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span>actual<span class="token punctuation">,</span> <span class="token string">'Toyota'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should have a model'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// const Taxi = new Taxi('Toyota', 'Prius'); REMOVED</span>
+  <span class="token keyword">const</span> actual <span class="token operator">=</span> taxi<span class="token punctuation">.</span>model
+  assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span>actual<span class="token punctuation">,</span> <span class="token string">'Prius'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<h3 id="task-5-minutes"><a href="#task-5-minutes" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Task: 5 minutes</h3>
+<p>Add a <code>driver</code> property to our taxi. This should be a <code>String</code> containing the driver’s name.</p>
+<ul>
+<li>Write a test to ensure that our taxi has a driver.</li>
+<li>Add a <code>driver</code> property to the taxi.</li>
+</ul>
+<details>
+<summary>Example solution</summary>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// taxi_spec.js</span>
+
+<span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should have a driver'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> actual <span class="token operator">=</span> taxi<span class="token punctuation">.</span>driver
+  assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span>actual<span class="token punctuation">,</span> <span class="token string">'Jane'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// taxi.js</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Taxi</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>manufacturer<span class="token punctuation">,</span> model<span class="token punctuation">,</span> driver<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// UPDATED</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>manufacturer <span class="token operator">=</span> manufacturer
+  <span class="token keyword">this</span><span class="token punctuation">.</span>model <span class="token operator">=</span> model
+  <span class="token keyword">this</span><span class="token punctuation">.</span>driver <span class="token operator">=</span> driver <span class="token comment">// NEW</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+</details>
+<h3 id="nested-describes"><a href="#nested-describes" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nested <code>describe()</code>s</h3>
+<p><code>describe()</code>s can be nested within each other. This can be useful for grouping similar tests. We might have several tests cases to test the various outcomes of one piece of functionality, for example.</p>
+<p>We’re going to add an array of passengers to our <code>Taxi</code>, so let’s use another <code>describe()</code> to group all of our tests relating to passenger functionality together.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// taxi_spec.js</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'Taxi'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+
+  <span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'passengers'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<blockquote>
+<p>Note: You can skip entire <code>describe</code> blocks using <code>xdescribe</code>.</p>
+</blockquote>
+<p>We can use then use <code>it()</code> for any test cases relating to this functionality, just like we did earlier.</p>
+<p>First let’s write a test to assert that we initially have an empty array of passengers.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'passengers'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should start with no passengers'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>Remember: if we want to assert that two array objects contain the same values then we have to use <code>assert.deepEqual()</code>.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'passengers'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should start with no passengers'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> actual <span class="token operator">=</span> taxi<span class="token punctuation">.</span>passengers
+    assert<span class="token punctuation">.</span><span class="token function">deepStrictEqual</span><span class="token punctuation">(</span>actual<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>Let’s run our test and see it fail.</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">test</span>
+
+<span class="token comment"># -> 3 passing</span>
+<span class="token comment"># -> 1 failing</span>
+<span class="token comment"># -> AssertionError [ERR_ASSERTION]: undefined deepEqual []</span>
+</code></pre>
+      </div>
+<p>Our test fails because <code>taxi.passengers</code> is <code>undefined</code> and we want it to be an empty array. That’s because we haven’t defined it in our constructor.</p>
+<p>Let’s add that empty array of passengers to our <code>Taxi</code> constructor now.</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// taxi.js</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Taxi</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>manufacturer<span class="token punctuation">,</span> model<span class="token punctuation">,</span> driver<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>passengers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// NEW</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>Now our test should pass.</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">test</span>
+
+<span class="token comment"># -> 4 passing</span>
+</code></pre>
+      </div>
+<p>Next we’re going to extend our <code>Taxi</code>, adding additional functionality for the passengers array.</p>
+<h3 id="task-20-minutes"><a href="#task-20-minutes" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Task: 20 minutes</h3>
+<p>Employing TDD, add the following methods to your taxi:</p>
+<ul>
+<li><code>numberOfPassengers</code></li>
+<li><code>addPassenger</code></li>
+<li><code>removePassengerByName</code></li>
+<li><code>removeAllPassengers</code></li>
+</ul>
+<p>A passenger should be represented as a <code>String</code> containing the passenger’s name.</p>
+<details>
+<summary>Example Solution</summary>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// taxi_spec.js</span>
+
+<span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should be able to return the number of passengers'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> actual <span class="token operator">=</span> taxi<span class="token punctuation">.</span><span class="token function">numberOfPassengers</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> actual<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should be able to add passengers'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  taxi<span class="token punctuation">.</span><span class="token function">addPassenger</span><span class="token punctuation">(</span><span class="token string">'Mike'</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> actual <span class="token operator">=</span> taxi<span class="token punctuation">.</span><span class="token function">numberOfPassengers</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span>actual<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should be able to remove a passenger by name'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  taxi<span class="token punctuation">.</span><span class="token function">addPassenger</span><span class="token punctuation">(</span><span class="token string">'Mike'</span><span class="token punctuation">)</span>
+  taxi<span class="token punctuation">.</span><span class="token function">addPassenger</span><span class="token punctuation">(</span><span class="token string">'Lucas'</span><span class="token punctuation">)</span>
+  taxi<span class="token punctuation">.</span><span class="token function">removePassengerByName</span><span class="token punctuation">(</span><span class="token string">'Lucas'</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> expected <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Mike'</span><span class="token punctuation">]</span>
+  <span class="token keyword">const</span> actual <span class="token operator">=</span> taxi<span class="token punctuation">.</span>passengers
+  assert<span class="token punctuation">.</span><span class="token function">deepStrictEqual</span><span class="token punctuation">(</span>expected<span class="token punctuation">,</span> actual<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should be able to remove all passengers'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  taxi<span class="token punctuation">.</span><span class="token function">addPassenger</span><span class="token punctuation">(</span><span class="token string">'Mike'</span><span class="token punctuation">)</span>
+  taxi<span class="token punctuation">.</span><span class="token function">addPassenger</span><span class="token punctuation">(</span><span class="token string">'Lucas'</span><span class="token punctuation">)</span>
+  taxi<span class="token punctuation">.</span><span class="token function">removeAllPassengers</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> actual <span class="token operator">=</span> taxi<span class="token punctuation">.</span><span class="token function">numberOfPassengers</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> actual<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// taxi.js</span>
+
+Taxi<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">numberOfPassengers</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>passengers<span class="token punctuation">.</span>length
+<span class="token punctuation">}</span>
+
+Taxi<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">addPassenger</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>passenger<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>passengers<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>passenger<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+Taxi<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">removePassengerByName</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>passenger<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> indexOfPassenger <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>passengers<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>passenger<span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>passengers<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>indexOfPassenger<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+Taxi<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">removeAllPassengers</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>passengers<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">numberOfPassengers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+</details>
+<h2 id="recap"><a href="#recap" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Recap</h2>
+<blockquote>
+<p>Instructor note: Ask the class…</p>
+</blockquote>
+<p>Which methods did we use from Node’s Assert module?</p>
+<details>
+<summary>Answers</summary>
+<p><code>equal()</code><br>
+<code>strictEqual()</code><br>
+<code>deepEqual()</code><br>
+<code>deepStrictEqual()</code></p>
+</details>
+<br>
+<p>What is the difference between <code>equal()</code> and <code>strictEqual()</code>?</p>
+<details>
+<summary>Answer</summary>
+<p><code>equal()</code> uses the abstract equality operator (<code>==</code>) while <code>strictEqual()</code> uses the strict equality operator (<code>===</code>).</p>
+</details>
+<br>
+<p>What is the difference between <code>equal()</code> and <code>deepEqual()</code>?</p>
+<details>
+<summary>Answer</summary>
+<p>When comparing objects <code>equal()</code> expects both arguments to be references to the exact same object, whereas <code>deepEqual()</code> will check if the contents of the objects are the same.</p>
+</details>
+<br>
+<p>How can we set up an npm script to run our tests for us?</p>
+<details>
+<summary>Answer</summary>
+<p>Add <code>mocha specs</code> to the test script in our package.json. This tells npm to run the files in our specs directory with mocha. We can then run this script using <code>npm test</code>.</p>
+</details>
+<br>
+<p>Which Mocha function can we use to group similar tests?</p>
+<details>
+<summary>Answer</summary>
+<p><code>describe()</code></p>
+</details>
+<h2 id="further-resources"><a href="#further-resources" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Further Resources</h2>
+<ul>
+<li><a href="https://nodejs.org/api/assert.html">Assert Documentation</a></li>
+<li><a href="https://mochajs.org">Mocha Documentation </a></li>
+<li><a href="https://dannorth.net/introducing-bdd/">Introducing BDD</a></li>
+</ul>
+<h2 id="conclusion"><a href="#conclusion" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conclusion</h2>
+<p>We can now write descriptive and well organised unit tests, which will help us to determine whether or not our code is working. Providing that we write good tests they can even ensure that we write better code.</p>
+<p>Once our unit tests are in place we can safely refactor without having to worry about breaking anything. If our tests still pass then we know that our code is still working.</p>
+<p>Our code will be better and more maintainable as a result of unit testing.</p></div><footer data-reactid="12"><a href="/codeclan-notes-starter/" data-reactid="13"><h2 class="return" data-reactid="14">Return to Index</h2></a><div style="display:flex;margin-bottom:0;" data-reactid="15"><img src="/codeclan-notes-starter/static/profile-pic.3068d96e.png" alt="Kyle Mathews" style="margin-right:0.65rem;margin-bottom:0;width:2.6rem;height:2.6rem;" data-reactid="16"/><p data-reactid="17"><strong data-reactid="18">CodeClan</strong><!-- react-text: 19 --> is Scotland&#x27;s award winning digital skills academy, based in Edinburgh and Glasgow.<!-- /react-text --><!-- react-text: 20 --> <!-- /react-text --><a href="https://codeclan.com/" data-reactid="21">Find out more</a><!-- react-text: 22 -->.<!-- /react-text --></p></div></footer></div><span style="display:block;clear:both;" data-reactid="23"> </span></div></div><script id="webpack-manifest">/*<![CDATA[*/window.webpackManifest={"231608221292675":"app-f2c8923a83ce4108fad9.js","99219681209289":"component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js","136703138138285":"component---src-templates-lesson-js-3d5070ff931608058595.js","35783957827783":"component---src-pages-index-js-e1480b317c1f080f994b.js","60335399758886":"path----557518bd178906f8d58a.js","210333531512890":"path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js","202636221882170":"path---just-a-markdown-d363a13dcc972bade523.js","5469536591921":"path---tutorial-b0ebfce13c42084df71a.js","104374533566041":"path---week-1-day-1-multiple-classes-a50f73f96edf06d64536.js","278637721748063":"path---week-1-day-2-tdd-javascript-6796bd7adc5455e05e7d.js","171562772603174":"path---week-2-day-1-inheritance-68894f15f401654ce7d0.js","142629428675168":"path---index-1fda150dc0cbbe0948b4.js","114276838955818":"component---src-layouts-index-js-5285966ecc51f772523f.js"}/*]]>*/</script><script>
+  
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'undefined', 'auto');
+  </script><script>/*<![CDATA[*/!function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",["/codeclan-notes-starter/commons-e73459728ff64e648635.js","/codeclan-notes-starter/app-f2c8923a83ce4108fad9.js","/codeclan-notes-starter/path---week-1-day-2-tdd-javascript-6796bd7adc5455e05e7d.js","/codeclan-notes-starter/component---src-templates-lesson-js-3d5070ff931608058595.js","/codeclan-notes-starter/component---src-layouts-index-js-5285966ecc51f772523f.js"])/*]]>*/</script></body></html>
