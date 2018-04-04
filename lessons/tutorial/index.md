@@ -21,6 +21,15 @@ To display Markdown files properly, the following points need to be met:
 * Markdown files should include [front matter](#front-matter) at the top.
 * `gatsby-config.js` should be configured with the current week and day, relative to the cohort.
 
+## Installation
+
+* Install Gatsby CLI: `npm install gatsby-cli`
+* Start a Gatsby project, using this starter:
+  ```
+  gatsby new cohort-name https://github.com/ajrussellaudio/codeclan-notes-starter
+  ```
+
+
 ## Adding lessons
 
 Lessons should be added as Markdown files to the `/lessons` directory.
