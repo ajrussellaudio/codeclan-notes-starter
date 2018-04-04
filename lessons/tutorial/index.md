@@ -160,6 +160,22 @@ URLs can be relative if the image file is added to the `/lessons` directory.
 
 Lines in Markdown which start with a `>` character (i.e. block quotes) will not be rendered.
 
-## Technologies used
+## FAQ
+
+### Are the generated pages private?
+
+No. The repo is private, but the generated pages are public. They will not appear on search engines who comply with the `robots.txt` standard (inc. Google, Bing, DuckDuckGo), but can be viewed by anyone who has the link.
+
+Since every student is already a member of the CodeClan organisation on Github, we are already effectively making every classnotes repo public, by placing ownership of them in the hands of students who fork the repo. This app is no less secure than the old way.
+
+### Does this mean we have to add front matter to every lesson?
+
+Yes, but Github also supports front matter when viewing Markdown, and many of us view lesson notes on Github in the browser as we're delivering. Nothing will change there. Long-term, we will add front matter to the lesson notes in the main module repos.
+
+### [This lesson] looks rubbish
+
+The app is designed around the [CodeClan lesson formatting guidelines](https://github.com/codeclan/instructor_resources/blob/master/formatting_lesson_notes.md) and the [Github Flavoured Markdown](https://guides.github.com/features/mastering-markdown/) standard. If a lesson doesn't look good here, it probably doesn't follow those guides. Open an issue on the relevant module repo describing the problem.
+
+### This is so dope. What is it built with?
 
 The main technology used here is [Gatsby](https://www.gatsbyjs.org/), a static site generator built with [React](https://reactjs.org/). Pages are built from standard React components, which pull data from Markdown files stored on the server with [GraphQL](https://graphql.org/). The difference is that rendering takes place on the server, not dynamically on the client. Typographic styling is handled with [Typography.js](https://kyleamathews.github.io/typography.js/). Code formatting is done with [Prism](http://prismjs.com/).
