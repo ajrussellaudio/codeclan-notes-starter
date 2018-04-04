@@ -28,6 +28,24 @@ To display Markdown files properly, the following points need to be met:
   ```
   gatsby new cohort-name https://github.com/ajrussellaudio/codeclan-notes-starter
   ```
+* Run the app locally with `gatsby develop` in Terminal
+* Replace the contents of `/lessons` with your [own Markdown](#adding-lessons)
+
+## Deployment
+
+* Create a new private repo on Github, e.g. `e6-notes`
+* In `gatsby-config.js`, update the `pathPrefix` field to the name of the repo you just made:
+
+```js
+module.exports = {
+  // ...
+  pathPrefix: '/e6-notes'
+  //...
+}
+```
+
+* Run `npm run deploy`
+* Visit the page at https://codeclan.github.io/es6-notes
 
 
 ## Adding lessons
