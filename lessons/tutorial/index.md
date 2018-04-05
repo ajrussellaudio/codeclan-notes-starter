@@ -3,8 +3,9 @@ title: How to use this thing
 week: 0
 day: 0
 order: 0
-summary: A tutorial in using this method of delivering student notes
-objectives: null
+objectives: [
+  "A tutorial in using this method of delivering student notes"
+]
 ---
 
 ## Introduction
