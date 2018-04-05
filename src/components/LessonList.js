@@ -1,14 +1,16 @@
 import React from 'react'
 import get from 'lodash/get'
 import groupBy from 'lodash/groupBy'
+import sortBy from 'lodash/sortBy'
 
 import LessonHeader from './LessonHeader'
 import LessonDescription from './LessonDescription'
 
 const ListOfLessons = ({ lessons }) => {
+  const lessonsInOrder = sortBy(lessons, ({ node }) => node.frontmatter.order)
   return (
     <div>
-      {lessons.map(({ node }) => (
+      {lessonsInOrder.map(({ node }) => (
         <div key={node.fields.slug}>
           <LessonHeader {...node} />
           <LessonDescription {...node} />

@@ -75,6 +75,7 @@ export const pageQuery = graphql`
             objectives
             week
             day
+            order
           }
         }
       }
