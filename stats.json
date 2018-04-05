@@ -1,12 +1,12 @@
 {
   "assetsByChunkName": {
     "path---tutorial": [
-      "path---tutorial-b0ebfce13c42084df71a.js",
-      "path---tutorial-b0ebfce13c42084df71a.js.map"
+      "path---tutorial-9cecf071afb5128c6a68.js",
+      "path---tutorial-9cecf071afb5128c6a68.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-e1480b317c1f080f994b.js",
-      "component---src-pages-index-js-e1480b317c1f080f994b.js.map"
+      "component---src-pages-index-js-9eb320019f72d54c16eb.js",
+      "component---src-pages-index-js-9eb320019f72d54c16eb.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
@@ -21,12 +21,12 @@
       "path---week-1-day-1-multiple-classes-a50f73f96edf06d64536.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-5285966ecc51f772523f.js",
-      "component---src-layouts-index-js-5285966ecc51f772523f.js.map"
+      "component---src-layouts-index-js-1d7f91385ae97a02a3af.js",
+      "component---src-layouts-index-js-1d7f91385ae97a02a3af.js.map"
     ],
     "component---src-templates-lesson-js": [
-      "component---src-templates-lesson-js-3d5070ff931608058595.js",
-      "component---src-templates-lesson-js-3d5070ff931608058595.js.map"
+      "component---src-templates-lesson-js-420c993d288c2ad85ae3.js",
+      "component---src-templates-lesson-js-420c993d288c2ad85ae3.js.map"
     ],
     "path---index": [
       "path---index-caf303a4b101bd3fa8d5.js",
@@ -51,9 +51,9 @@
       "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-ca6f33848b3588b33c63.js",
+      "app-a29ca0d2b41b7b836f0b.js",
       "build-js-styles.css",
-      "app-ca6f33848b3588b33c63.js.map",
+      "app-a29ca0d2b41b7b836f0b.js.map",
       "build-js-styles.css.map"
     ],
     "path---week-1-day-2-tdd-javascript": [
