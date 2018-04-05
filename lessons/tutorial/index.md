@@ -1,10 +1,10 @@
 ---
-title: How to use this Gatsby starter
+title: How to use this thing
 week: 0
 day: 0
-objectives: [
-  "Be able to install and use this starter"
-]
+order: 0
+summary: A tutorial in using this method of delivering student notes
+objectives: null
 ---
 
 ## Introduction
@@ -74,23 +74,24 @@ Notice that files named `index.md` will not appear in the generated URL, similar
 
 In order to be displayed, Markdown files must include [front matter](http://assemble.io/docs/YAML-front-matter.html) at the top. Front matter is a block of YAML containing metadata about the lesson.
 
-As a minimum, `title`, `week` and `day` fields must be included, for example:
+As a minimum, the following fields **must** be included:
 
-```yaml
----
-  title: Intro to Java
-  week: 6
-  day: 1
----
-```
+* `title` - The title of the lesson. Will be used to display links in the index, and the title and `<h1>` header in a lesson page
+* `week` - The week number in which the lesson should appear. Used for filtering and displaying the lessons in the index
+* `day` - The day of the week in which the lesson appears as a number (1-5). Used for filtering and displaying the lessons in the index
+* `order` - An arbitrary number. Used for sorting the lessons within a day
+* `objectives` - An array of strings describing the learning objectives of the lesson. Displayed in the index.
 
-Optionally, an `objectives` field can also be included, which should contain an array of Learning Objectives for the lesson. These will be displayed as a list in the lesson index.
+Front matter can also contain a `duration` field, with the length of the lesson. This is not currently implemented here, but since front matter also displays on Github, it would be nice to have.
+
+Here's an example of well-formatted front matter:
 
 ```yaml
 ---
   title: Test Driven Development Using Assert and Mocha
   week: 11
   day: 2
+  order: 2
   objectives: [
     "Be able to write basic tests using Node's Assert module",
     "Be able to write unit tests using Assert in combination with Mocha",
@@ -99,13 +100,13 @@ Optionally, an `objectives` field can also be included, which should contain an 
 ---
 ```
 
-Will display in the index:
+If no `objectives` field is present, the index will display an excerpt of text from the top of the file.
+
+`order` set to `2` means that another lesson in the same day can set `order` to `1` and appear before this lesson in the index.
+
+The above lesson will display in the index as:
 
 ![Image of Week 11, Day 2 in the index](w11d2_tdd_js.png)
-
-If no `objectives` field appears in the front matter, the index will display an excerpt of text from the top of the file.
-
-Other fields can be included in the front matter, e.g. `module` and `duration`. These will be ignored by this app, but will still be displayed when viewing the file on Github.
 
 ## Configuring the Week and Day
 
