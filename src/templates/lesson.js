@@ -41,7 +41,6 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        duration
       }
       tableOfContents
     }
