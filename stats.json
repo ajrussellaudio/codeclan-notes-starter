@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "path---tutorial": [
-      "path---tutorial-9cecf071afb5128c6a68.js",
-      "path---tutorial-9cecf071afb5128c6a68.js.map"
+      "path---tutorial-189a44229f0ba31f7364.js",
+      "path---tutorial-189a44229f0ba31f7364.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-9eb320019f72d54c16eb.js",
@@ -16,10 +16,6 @@
       "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js",
       "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js.map"
     ],
-    "path---week-1-day-1-multiple-classes": [
-      "path---week-1-day-1-multiple-classes-a50f73f96edf06d64536.js",
-      "path---week-1-day-1-multiple-classes-a50f73f96edf06d64536.js.map"
-    ],
     "component---src-layouts-index-js": [
       "component---src-layouts-index-js-1d7f91385ae97a02a3af.js",
       "component---src-layouts-index-js-1d7f91385ae97a02a3af.js.map"
@@ -29,8 +25,8 @@
       "component---src-templates-lesson-js-c1fc8111c174247b0a0d.js.map"
     ],
     "path---index": [
-      "path---index-caf303a4b101bd3fa8d5.js",
-      "path---index-caf303a4b101bd3fa8d5.js.map"
+      "path---index-95c36cc5747a2631a7c1.js",
+      "path---index-95c36cc5747a2631a7c1.js.map"
     ],
     "commons": [
       "commons-e73459728ff64e648635.js",
@@ -38,27 +34,15 @@
       "commons-e73459728ff64e648635.js.map",
       "build-js-styles.css.map"
     ],
-    "path---week-2-day-1-inheritance": [
-      "path---week-2-day-1-inheritance-68894f15f401654ce7d0.js",
-      "path---week-2-day-1-inheritance-68894f15f401654ce7d0.js.map"
-    ],
-    "path---just-a-markdown": [
-      "path---just-a-markdown-d363a13dcc972bade523.js",
-      "path---just-a-markdown-d363a13dcc972bade523.js.map"
-    ],
     "path---offline-plugin-app-shell-fallback": [
       "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js",
       "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-a29ca0d2b41b7b836f0b.js",
+      "app-b02ddd37d333a93799e5.js",
       "build-js-styles.css",
-      "app-a29ca0d2b41b7b836f0b.js.map",
+      "app-b02ddd37d333a93799e5.js.map",
       "build-js-styles.css.map"
-    ],
-    "path---week-1-day-2-tdd-javascript": [
-      "path---week-1-day-2-tdd-javascript-6796bd7adc5455e05e7d.js",
-      "path---week-1-day-2-tdd-javascript-6796bd7adc5455e05e7d.js.map"
     ]
   }
 }

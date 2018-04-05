@@ -1,0 +1,2 @@
+webpackJsonp([0x81b8806e4260],{508:function(t,e){t.exports={data:{site:{siteMetadata:{title:"CodeClan",date:{week:2,day:1}}},allMarkdownRemark:{edges:[{node:{excerpt:"Introduction This project delivers our written notes to students. Notes are converted automatically from our  .md  Markdown files into rich…",fields:{slug:"/tutorial/"},frontmatter:{title:"How to use this Gatsby starter",objectives:["Be able to install and use this starter"],week:0,day:0}}}]}},pathContext:{}}}});
+//# sourceMappingURL=path---index-95c36cc5747a2631a7c1.js.map
