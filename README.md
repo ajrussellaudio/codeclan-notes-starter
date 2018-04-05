@@ -6,6 +6,7 @@ Gatsby starter for creating students' notes at [CodeClan](https://codeclan.com/)
 
 * Install [Gatsby](https://www.gatsbyjs.org/): `npm install --global gatsby-cli`
 * Install this starter: `gatsby new cohort-name-classnotes https://github.com/ajrussellaudio/codeclan-notes-starter`
+* See the full documentation at https://codeclan.github.io/codeclan-notes-starter/tutorial/
 
 ## Running in development
 
