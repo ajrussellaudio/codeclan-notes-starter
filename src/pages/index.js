@@ -27,7 +27,6 @@ const LessonIndex = props => {
     'data.allMarkdownRemark.edges',
     []
   ).filter(lesson => {
-    console.log(lesson)
     const lessonWeek = get(lesson, 'node.frontmatter.week')
     const lessonDay = get(lesson, 'node.frontmatter.day')
     const thisWeek = get(props, 'data.site.siteMetadata.date.week', 1)
