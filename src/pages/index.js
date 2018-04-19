@@ -1,7 +1,7 @@
 import React from 'react'
 import get from 'lodash/get'
-import Helmet from 'react-helmet'
 
+import Head from '../components/Head'
 import Bio from '../components/Bio'
 import LessonList from '../components/LessonList'
 
@@ -41,9 +41,7 @@ const LessonIndex = props => {
 
   return (
     <div>
-      <Helmet title={siteTitle}>
-        <link rel="icon" type="image/png" href="/favicon.png" />
-      </Helmet>
+      <Head title={siteTitle} />
       <Bio />
       <LessonList lessons={lessonsBeforeToday} />
     </div>

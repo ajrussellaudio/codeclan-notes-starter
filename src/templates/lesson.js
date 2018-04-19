@@ -1,7 +1,7 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
+import Head from '../components/Head'
 import Footer from '../components/Footer'
 import ContentsBox from '../components/ContentsBox'
 import { rhythm, scale } from '../utils/typography'
@@ -14,9 +14,7 @@ class LessonTemplate extends React.Component {
 
     return (
       <div>
-        <Helmet title={`${lesson.frontmatter.title} | ${siteTitle}`}>
-          <link rel="icon" type="image/png" href="/favicon.png" />
-        </Helmet>
+        <Head title={`${lesson.frontmatter.title} | ${siteTitle}`} />
         <h1>{lesson.frontmatter.title}</h1>
         <ContentsBox html={lesson.tableOfContents} />
         <div dangerouslySetInnerHTML={{ __html: lesson.html }} />

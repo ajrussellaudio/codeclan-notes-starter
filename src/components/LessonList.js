@@ -41,7 +41,7 @@ const ListOfWeeks = ({ lessons }) => {
   return (
     <div>
       {Object.keys(weeks).map(weekNumber => (
-        <details className="lesson-list" key={weekNumber} open>
+        <details className="lesson-list" key={weekNumber}>
           <summary>
             <h6>Week {weekNumber}</h6>
           </summary>
